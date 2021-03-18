@@ -1,1 +1,37 @@
-<p>auth works!</p>
+<div class="wrapper">
+    <app-logo></app-logo>
+    <ng-container *ngIf="isLogin;else signup">
+        <button class="switch-btn" (click)="toggle()">Signup</button>
+        <div class="container">
+            <h1 class="title">Login</h1>
+            <div class="username">
+                <i class="far fa-user"></i>
+                <input type="text" required/>
+            </div>
+            <div class="password">
+                <i class="far fa-lock-alt"></i>
+                <input type="password" required/>
+            </div>
+            <button class="signin">Signin</button>
+        </div>
+    </ng-container>
+    <ng-template #signup>
+        <button class="switch-btn" (click)="toggle()">Signin</button>
+        <div class="container">
+            <h1 class="title">Signup</h1>
+            <div class="username">
+                <i class="far fa-user"></i>
+                <input type="text" required/>
+            </div>
+            <div class="email">
+                <i class="far fa-envelope"></i>
+                <input type="email" required/>
+            </div>
+            <div class="password">
+                <i class="far fa-lock-alt"></i>
+                <input type="password" required/>
+            </div>
+            <button class="signup">Signup</button>
+        </div>
+    </ng-template>
+</div>
