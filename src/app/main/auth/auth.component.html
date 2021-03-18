@@ -1,37 +1,37 @@
 <div class="wrapper">
     <app-logo></app-logo>
-    <ng-container *ngIf="isLogin;else signup">
+    <ng-container *ngIf="isLogin">
         <button class="switch-btn" (click)="toggle()">Signup</button>
-        <div class="container">
+        <form class="container" [formGroup]="signinForm" (ngSubmit)="signin()">
             <h1 class="title">Login</h1>
-            <div class="username">
+            <div class="input-field username">
                 <i class="far fa-user"></i>
-                <input type="text" required/>
+                <input type="text" formControlName="username" required/>
             </div>
-            <div class="password">
+            <div class="input-field password">
                 <i class="far fa-lock-alt"></i>
-                <input type="password" required/>
+                <input type="password" formControlName="password" required/>
             </div>
             <button class="signin">Signin</button>
-        </div>
+        </form>
     </ng-container>
-    <ng-template #signup>
+    <ng-container *ngIf="!isLogin">
         <button class="switch-btn" (click)="toggle()">Signin</button>
-        <div class="container">
+        <form class="container" [formGroup]="signupForm" (ngSubmit)="signup()">
             <h1 class="title">Signup</h1>
-            <div class="username">
+            <div class="input-field username">
                 <i class="far fa-user"></i>
-                <input type="text" required/>
+                <input type="text" formControlName="username" required/>
             </div>
-            <div class="email">
+            <div class="input-field email">
                 <i class="far fa-envelope"></i>
-                <input type="email" required/>
+                <input type="email" formControlName="email" required/>
             </div>
-            <div class="password">
+            <div class="input-field password">
                 <i class="far fa-lock-alt"></i>
-                <input type="password" required/>
+                <input type="password" formControlName="password" required/>
             </div>
             <button class="signup">Signup</button>
-        </div>
-    </ng-template>
+        </form>
+    </ng-container>
 </div>
