@@ -1,1 +1,37 @@
-<p>auth works!</p>
+<div class="wrapper">
+    <app-logo></app-logo>
+    <ng-container *ngIf="isLogin">
+        <button class="switch-btn" (click)="toggle()">Signup</button>
+        <form class="container" [formGroup]="signinForm" (ngSubmit)="signin()">
+            <h1 class="title">Login</h1>
+            <div class="input-field username">
+                <i class="far fa-user"></i>
+                <input type="text" formControlName="username" required/>
+            </div>
+            <div class="input-field password">
+                <i class="far fa-lock-alt"></i>
+                <input type="password" formControlName="password" required/>
+            </div>
+            <button class="signin">Signin</button>
+        </form>
+    </ng-container>
+    <ng-container *ngIf="!isLogin">
+        <button class="switch-btn" (click)="toggle()">Signin</button>
+        <form class="container" [formGroup]="signupForm" (ngSubmit)="signup()">
+            <h1 class="title">Signup</h1>
+            <div class="input-field username">
+                <i class="far fa-user"></i>
+                <input type="text" formControlName="username" required/>
+            </div>
+            <div class="input-field email">
+                <i class="far fa-envelope"></i>
+                <input type="email" formControlName="email" required/>
+            </div>
+            <div class="input-field password">
+                <i class="far fa-lock-alt"></i>
+                <input type="password" formControlName="password" required/>
+            </div>
+            <button class="signup">Signup</button>
+        </form>
+    </ng-container>
+</div>
