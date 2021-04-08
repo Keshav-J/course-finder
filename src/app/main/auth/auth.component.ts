@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ROUTERURL } from 'src/app/core/constants/urlconstants';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 
 @Component({
@@ -11,44 +9,43 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 })
 export class AuthComponent implements OnInit {
 
-  isLogin: boolean = true;
+  isLogin = true;
   signinForm = this.formBuilder.group({
-    username: '',
+    email: '',
     password: ''
   });
   signupForm = this.formBuilder.group({
-    username: '',
+    name: '',
     email: '',
     password: ''
   });
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private router: Router
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
   }
 
   signin(): void {
-    const username = this.signinForm.value.username;
+    const email = this.signinForm.value.email;
     const password = this.signinForm.value.password;
 
-    if(this.authService.signin(username, password)) {
+    if (this.authService.signin(email, password)) {
       // this.router.navigate(['/dashboard']);
       location.reload();
     } else {
-      alert('Invalid username or password!');
+      alert('Invalid email or password!');
     }
   }
 
   signup(): void {
-    const username = this.signinForm.value.username;
+    const name = this.signinForm.value.name;
     const email = this.signinForm.value.email;
     const password = this.signinForm.value.password;
 
-    if(this.authService.signup(username, email, password)) {
+    if (this.authService.signup(name, email, password)) {
       // this.router.navigate(['/dashboard']);
       location.reload();
     } else {
