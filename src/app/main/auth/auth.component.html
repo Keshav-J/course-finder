@@ -4,13 +4,13 @@
         <button class="switch-btn" (click)="toggle()">Signup</button>
         <form class="container" [formGroup]="signinForm" (ngSubmit)="signin()">
             <h1 class="title">Login</h1>
-            <div class="input-field username">
+            <div class="input-field email">
                 <i class="far fa-user"></i>
-                <input type="text" formControlName="username" required/>
+                <input type="email" formControlName="email" placeholder="email" required/>
             </div>
             <div class="input-field password">
                 <i class="far fa-lock-alt"></i>
-                <input type="password" formControlName="password" required/>
+                <input type="password" formControlName="password" placeholder="password" required/>
             </div>
             <button class="signin">Signin</button>
         </form>
@@ -19,17 +19,17 @@
         <button class="switch-btn" (click)="toggle()">Signin</button>
         <form class="container" [formGroup]="signupForm" (ngSubmit)="signup()">
             <h1 class="title">Signup</h1>
-            <div class="input-field username">
+            <div class="input-field name">
                 <i class="far fa-user"></i>
-                <input type="text" formControlName="username" required/>
+                <input type="text" formControlName="name" placeholder="name" required/>
             </div>
             <div class="input-field email">
                 <i class="far fa-envelope"></i>
-                <input type="email" formControlName="email" required/>
+                <input type="email" formControlName="email" placeholder="email" required/>
             </div>
             <div class="input-field password">
                 <i class="far fa-lock-alt"></i>
-                <input type="password" formControlName="password" required/>
+                <input type="password" formControlName="password" placeholder="password" required/>
             </div>
             <button class="signup">Signup</button>
         </form>
