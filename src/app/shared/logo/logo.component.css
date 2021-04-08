@@ -1,0 +1,16 @@
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 75px;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=logo.component.css.map */

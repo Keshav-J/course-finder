@@ -1,13 +1,17 @@
 button {
     padding: 10px 20px;
-    background: greenyellow;
+    background-image:linear-gradient(to right,rgb(0, 247, 255),rgb(0, 255, 85));
     border-radius: 25px;
-
+    border: none;
+    font-size: 20px;
+    color: white;
     &:hover {
         cursor: pointer;
     }
 }
-
+.large{
+    min-width: 250px;
+}
 .wrapper {
     height: 100vh;
     width: 100vw;
@@ -34,7 +38,16 @@ button {
             }
 
             input {
-                margin: 10px;
+                margin: 15px;
+                border: {
+                    top: none;
+                    left: none;
+                    right: none;
+                }
+               
+            }
+            input :focus{
+                border-bottom: 2px solid greenyellow;
             }
         }
     }
