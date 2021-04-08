@@ -12,7 +12,7 @@
         <ng-container *ngFor="let resource of resourceList">
             <div class="resource">
                 <input type="radio" name="courses" id="{{resource.name}}" [(ngModel)]="selectedCourse" value="{{resource.name}}" />
-                <label for="{{resource.name}}">{{resource.name}}</label>
+                <label for="{{resource.name}}"><b>{{resource.name}}</b></label>
             </div>
         </ng-container>
     </div>

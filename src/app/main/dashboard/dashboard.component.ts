@@ -9,22 +9,22 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  selectedCourse = 'videos';
+  selectedCourse = 'Videos';
 
   resourceList = [
     {
-      name: 'videos',
+      name: 'Videos',
     },
     {
-      name: 'courses',
+      name: 'Courses',
     },
     {
-      name: 'blogs',
+      name: 'Blogs',
     },
   ];
 
   responseList: { [key: string]: CardItem[] } = {
-    videos: [
+    Videos: [
       {
         title: 'Introduction to Web development | Course Objective',
         srcName: 'Annan Pota Code-uh',
@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
         totalRating: 5
       },
     ],
-    courses: [
+    Courses: [
       {
         title: 'The compolete 2021 web development bootcamp',
         srcName: 'Udemy',
@@ -64,7 +64,7 @@ export class DashboardComponent implements OnInit {
         totalRating: 5
       },
     ],
-    blogs: [
+    Blogs: [
       {
         title: 'Web Development - W3Schools',
         srcName: 'wwww.w3schools.com',
