@@ -1,11 +1,10 @@
 <div class="wrapper">
     <app-logo></app-logo>
-    <button (click)="logout()" class="logout">Logout</button>
 
-    <div class="search">
-        <input type="text" name="search-bar" placeholder="Search here..." />
-        <button>Search</button>
-    </div>
+    <form class="search" [formGroup]="searchForm" (ngSubmit)="search()">
+        <input type="text" formControlName="searchQuery" placeholder="Search here..." />
+        <button type="submit">Search</button>
+    </form>
 
     <div class="resource-list">
         <ng-container *ngFor="let resource of resourceList">
@@ -15,6 +14,8 @@
             </div>
         </ng-container>
     </div>
-    
+
     <app-cards-list [resourceList]="responseList[selectedCourse]"></app-cards-list>
+
+    <button (click)="logout()" class="logout">Logout</button>
 </div>
