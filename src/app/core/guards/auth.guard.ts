@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
+import { ROUTERURL } from '../constants/urlconstants';
 import { AuthService } from '../services/auth/auth.service';
 
 @Injectable({
@@ -23,12 +24,11 @@ export class AuthGuard implements CanActivate {
         if (isAuthenticated) {
           return true;
         } else {
-          return this.router.createUrlTree(['/auth']);
+          return this.router.createUrlTree([ROUTERURL.AUTH]);
         }
       })
     );
   }
-  
 }
 
 @Injectable({
@@ -48,12 +48,11 @@ export class UnAuthGuard implements CanActivate {
         const isAuthenticated = !!user;
 
         if (isAuthenticated) {
-          return this.router.createUrlTree(['/dashboard']);
+          return this.router.createUrlTree([ROUTERURL.DASHBOARD]);
         } else {
           return true;
         }
       })
     );
   }
-  
 }

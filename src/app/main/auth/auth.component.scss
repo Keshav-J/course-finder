@@ -1,23 +1,43 @@
 button {
     padding: 10px 20px;
-    background: greenyellow;
+    background-image:linear-gradient(to right,rgb(0, 247, 255),rgb(0, 255, 85));
     border-radius: 25px;
-
+    border: none;
+    font-size: 20px;
+    color: white;
     &:hover {
         cursor: pointer;
     }
 }
-
+.large{
+    min-width: 250px;
+}
 .wrapper {
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     
+    .background{
+        position: absolute;
+        
+    }
+    .tr{
+        top: 0px;
+        right:0px;
+        height: 500px;
+    }
+    .bl{
+        bottom: 0px;
+        left:0px;
+        height: 250px;
+    }
+
     .switch-btn {
         position: absolute;
         right: 15px;
         top: 15px;
+        
     }
     
     .container {
@@ -34,8 +54,18 @@ button {
             }
 
             input {
-                margin: 10px;
+                margin: 15px;
+                border: {
+                    top: none;
+                    left: none;
+                    right: none;
+                }
+               
+            }
+            input :focus{
+                border-bottom: 2px solid greenyellow;
             }
         }
     }
 }
+
