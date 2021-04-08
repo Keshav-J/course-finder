@@ -11,8 +11,12 @@ export class DashboardService {
 
   constructor(private resourceApi: ResourceApi) { }
 
-  searchQuery(queryString: string): Observable<{ [key: string]: CardItem[] }> {
-    return this.resourceApi.searchQuery(queryString);
+  searchYoutube(queryString: string): Observable<{ [key: string]: CardItem[] }> {
+    return this.resourceApi.searchYoutube(queryString);
+  }
+
+  searchBlogs(queryString: string): Observable<CardItem[]> {
+    return this.resourceApi.searchBlogs(queryString);
   }
 
 }

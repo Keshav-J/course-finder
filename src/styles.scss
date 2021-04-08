@@ -13,3 +13,7 @@ input:focus, textarea:focus, select:focus{
     width:60px;
     height: 60px;
 }
+
+input:focus, textarea:focus, select:focus, button:focus{
+    outline: none;
+}

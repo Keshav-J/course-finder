@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { HelperService } from 'src/app/core/helpers/helper.service';
 import { CardItem } from 'src/app/core/models/models';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { DashboardService } from 'src/app/core/services/dashboard/dashboard.service';
@@ -28,12 +29,17 @@ export class DashboardComponent implements OnInit {
     },
   ];
 
-  responseList: { [key: string]: CardItem[] } = {};
+  responseList: { [key: string]: CardItem[] } = {
+    videos: [],
+    courses: [],
+    blogs: []
+  };
 
   constructor(
     private authService: AuthService,
     private dashboardService: DashboardService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private helperService: HelperService
   ) { }
 
   ngOnInit(): void {
@@ -41,9 +47,16 @@ export class DashboardComponent implements OnInit {
 
   search(): void {
     const searchQuery = this.searchForm.get('searchQuery')?.value;
-    this.dashboardService.searchQuery(searchQuery).subscribe(
-      (data: { [key: string]: CardItem[]; }) => {
-        this.responseList = data;
+    this.dashboardService.searchYoutube(searchQuery).subscribe(
+      (data: { [key: string]: CardItem[] }) => {
+        console.log(data);
+        this.responseList.videos = this.helperService.parseVideoToCardItem(data.data);
+      }
+    );
+    this.dashboardService.searchBlogs(searchQuery).subscribe(
+      (data: CardItem[]) => {
+        console.log(data);
+        this.responseList.blogs = this.helperService.parseBlogToCardItem(data);
       }
     );
   }

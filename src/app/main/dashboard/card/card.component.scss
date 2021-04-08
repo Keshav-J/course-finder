@@ -1,0 +1,28 @@
+a {
+    color: unset;
+    text-decoration: none;
+}
+.container{
+    width:1000px;
+    height:70px;
+    border: 2px solid gray;
+    border-radius: 20px;
+    margin:10px;
+    box-shadow: 1px 1px 3px rgb(218, 218, 218);
+    padding: 0px 10px;
+    position: relative;
+    background-color: white;
+}
+.right-align{
+    position: absolute;
+    right:20px;
+    top:20px;
+    width:100px;
+}
+.title {
+    padding-top: 5px;
+    margin-right: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
