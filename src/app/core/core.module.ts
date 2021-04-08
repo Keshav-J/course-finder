@@ -4,6 +4,9 @@ import { AuthGuard, UnAuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserApi } from './api/user/user.api';
+import { DashboardService } from './services/dashboard/dashboard.service';
+import { ResourceApi } from './api/resource/resource.api';
+import { HelperService } from './helpers/helper.service';
 
 @NgModule({
   declarations: [],
@@ -15,7 +18,10 @@ import { UserApi } from './api/user/user.api';
     AuthService,
     AuthGuard,
     UnAuthGuard,
-    UserApi
+    UserApi,
+    DashboardService,
+    ResourceApi,
+    HelperService
   ]
 })
 export class CoreModule { }

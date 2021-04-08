@@ -1,15 +1,17 @@
-<div class="container">
-    <div class="right-align">
+<a href="{{resource.srcURL}}" target="_blank">
+    <div class="container">
+        <div class="right-align">
+            <div>
+            <h3> {{resource.rating | number : '1.1-1'}}/{{resource.totalRating}}</h3>
+            </div>
+            
+        </div>
         <div>
-           <h3> {{resource.rating}}/{{resource.totalRating}}</h3>
+            <h2 class="title"> {{resource.title}}</h2>
+        </div>
+        <div>
+            {{resource.srcName}}
         </div>
         
     </div>
-    <div>
-        <h2> {{resource.title}}</h2>
-    </div>
-    <div>
-         {{resource.srcName}}
-    </div>
-    
-</div>
+</a>

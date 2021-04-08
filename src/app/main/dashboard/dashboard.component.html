@@ -1,21 +1,26 @@
 <div class="wrapper">
     <app-logo></app-logo>
+
     <img class="background bl" src="..//..//..//.//assets/images/school.png" >
     <img class="background tr" src="..//..//..//.//assets/images/color_dots.png" >
-    <button (click)="logout()" class="logout">Logout</button>
-    <div class="search">
-        <input type="text" name="search-bar" placeholder="Search here..." />
-        <button>Search</button>
+
+    <div class="container">
+        <form class="search" [formGroup]="searchForm" (ngSubmit)="search()">
+            <input type="text" formControlName="searchQuery" placeholder="Search here..." />
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="resource-list">
+            <ng-container *ngFor="let resource of resourceList">
+                <div class="resource">
+                    <input type="radio" name="courses" id="{{resource.name}}" [(ngModel)]="selectedCourse" value="{{resource.name}}" />
+                    <label for="{{resource.name}}">{{resource.name}}</label>
+                </div>
+            </ng-container>
+        </div>
+
+        <app-cards-list [resourceList]="responseList[selectedCourse]"></app-cards-list>
     </div>
 
-    <div class="resource-list">
-        <ng-container *ngFor="let resource of resourceList">
-            <div class="resource">
-                <input type="radio" name="courses" id="{{resource.name}}" [(ngModel)]="selectedCourse" value="{{resource.name}}" />
-                <label for="{{resource.name}}"><b>{{resource.name}}</b></label>
-            </div>
-        </ng-container>
-    </div>
-    
-    <app-cards-list [resourceList]="responseList[selectedCourse]"></app-cards-list>
+    <button (click)="logout()" class="logout">Logout</button>
 </div>

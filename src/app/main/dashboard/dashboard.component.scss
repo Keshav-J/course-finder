@@ -5,6 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    position: fixed;
     
     .resource-list{
         display: flex;
@@ -36,13 +38,13 @@
         top: 15px;
     }
     .background{
-        position: fixed;
-        
+        position: absolute;
+        z-index: -1;
     }
     .tr{
         top: 0px;
-        right:-150px;
-        height: 800px;
+        right:-100px;
+        height: 100vh;
         z-index: -1;
 
     }
@@ -82,4 +84,12 @@ button {
 }
 .large{
     min-width: 250px;
+}
+
+.container {
+    height: 100vh;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
