@@ -2,5 +2,19 @@
     <app-logo></app-logo>
     <button (click)="logout()" class="logout">Logout</button>
 
-    <app-cards-list></app-cards-list>
+    <div class="search">
+        <input type="text" name="search-bar" placeholder="Search here..." />
+        <button>Search</button>
+    </div>
+
+    <div class="resource-list">
+        <ng-container *ngFor="let resource of resourceList">
+            <div class="resource">
+                <input type="radio" name="courses" id="{{resource.name}}" [(ngModel)]="selectedCourse" value="{{resource.name}}" />
+                <label for="{{resource.name}}">{{resource.name}}</label>
+            </div>
+        </ng-container>
+    </div>
+    
+    <app-cards-list [resourceList]="responseList[selectedCourse]"></app-cards-list>
 </div>
