@@ -3,7 +3,7 @@ a {
     text-decoration: none;
 }
 .container{
-    width:1000px;
+    width: 70vw;
     height:70px;
     border: 2px solid gray;
     border-radius: 20px;
@@ -12,6 +12,10 @@ a {
     padding: 0px 10px;
     position: relative;
     background-color: white;
+
+    @media screen and (max-width: 1080px) {
+        width: 95vw;
+    }
 }
 .right-align{
     position: absolute;

@@ -9,9 +9,11 @@ import { CardItem } from 'src/app/core/models/models';
 export class CardsListComponent implements OnInit {
 
   @Input()
-  resourceList: CardItem[] = [];
+  resourceList: CardItem[];
 
-  constructor() { }
+  constructor() {
+    this.resourceList = [];
+  }
 
   ngOnInit(): void {
   }

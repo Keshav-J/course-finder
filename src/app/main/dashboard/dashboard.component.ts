@@ -19,13 +19,13 @@ export class DashboardComponent implements OnInit {
 
   resourceList = [
     {
-      name: 'Videos',
+      name: 'videos',
     },
     {
-      name: 'Courses',
+      name: 'courses',
     },
     {
-      name: 'Blogs',
+      name: 'blogs',
     },
   ];
 
