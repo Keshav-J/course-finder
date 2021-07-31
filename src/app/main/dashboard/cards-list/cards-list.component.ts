@@ -11,8 +11,12 @@ export class CardsListComponent implements OnInit {
   @Input()
   resourceList: CardItem[];
 
+  @Input()
+  isLoading: boolean;
+
   constructor() {
     this.resourceList = [];
+    this.isLoading = false;
   }
 
   ngOnInit(): void {

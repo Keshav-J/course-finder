@@ -1,3 +1,5 @@
+import { CardItem } from './models';
+
 export interface CourseResult {
     coursera: CourseItem[];
     edx: CourseItem[];
@@ -11,4 +13,9 @@ export interface CourseItem {
     snippet: string;
     title: string;
     url: string;
+}
+
+export interface ResponseItem {
+    isLoading: boolean;
+    data: CardItem[];
 }
