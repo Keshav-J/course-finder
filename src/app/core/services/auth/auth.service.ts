@@ -15,13 +15,11 @@ export class AuthService {
 
   autoLogin(): void {
     const user = JSON.parse(localStorage.getItem('user') as string);
-    console.log(user);
 
     if (!user) {
       return;
     }
 
-    console.log(user);
     this.handleAuthentication(user.name, user.email);
   }
 
@@ -50,17 +48,14 @@ export class AuthService {
   }
 
   signin(email: string, password: string): Subscription {
-    const signinResponse = this.userApi.signinUser(email, password);
-    console.log(signinResponse);
-
-    // tslint:disable-next-line: deprecation
-    return signinResponse.subscribe(
+    return this.userApi.signinUser(email, password).subscribe(
       (data: User) => {
         console.log('authService signin =>', data);
         this.handleAuthentication(data.email, data.name);
         return true;
       },
       (error: HttpErrorResponse) => {
+        console.log('auth service err');
         console.error(error.statusText);
         return false;
       }

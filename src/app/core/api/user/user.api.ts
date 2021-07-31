@@ -21,16 +21,6 @@ export class UserApi {
   }
 
   signinUser(email: string, password: string): Observable<User> {
-    if (email !== 'admin@gmail.com' || password !== 'admin') {
-      return this.http.get<any>('https://mean-space-invaders.herokuapp.com/getscore', {});
-    }
-
-    return new Observable(subscriber => {
-      subscriber.next({
-        id: 1,
-        name: 'admin',
-        email
-      });
-    });
+    return this.http.post<User>('http://localhost:3000/dev/api/login', { email, password });
   }
 }
