@@ -19,7 +19,7 @@
             </ng-container>
         </div>
 
-        <app-cards-list [resourceList]="responseList[selectedCourse]"></app-cards-list>
+        <app-cards-list [resourceList]="responseList[selectedCourse].data" [isLoading]="responseList[selectedCourse].isLoading"></app-cards-list>
     </div>
 
     <button (click)="logout()" class="logout">Logout</button>
