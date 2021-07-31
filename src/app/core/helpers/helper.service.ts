@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CardItem } from '../models/models';
+import { CourseItem, CourseResult } from '../models/response.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class HelperService {
         totalRating: 5
       });
 
-      rating -= [0,0.1][Math.floor(Math.random() * 2)];
+      rating -= [0, 0.1][Math.floor(Math.random() * 2)];
     });
 
     return cardList;
@@ -53,5 +54,36 @@ export class HelperService {
     });
 
     return cardList;
+  }
+
+  parseCourseToCardItem(courseResult: CourseResult): CardItem[] {
+
+    const cardList: CardItem[] = [];
+
+    courseResult.coursera.forEach(course => {
+      cardList.push(this.parseCourseItem(course));
+    });
+    courseResult.edx.forEach(course => {
+      cardList.push(this.parseCourseItem(course));
+    });
+    courseResult.udemy.forEach(course => {
+      cardList.push(this.parseCourseItem(course));
+    });
+
+    cardList.sort((a, b) => {
+      return b.rating - a.rating;
+    });
+
+    return cardList.slice(0, this.cardsCount + 1);
+  }
+
+  parseCourseItem(courseItem: CourseItem): CardItem {
+    return {
+      title: courseItem.title,
+      srcName: courseItem.domain,
+      srcURL: courseItem.url,
+      rating: 4 + Math.random() * 1,
+      totalRating: 5
+    };
   }
 }

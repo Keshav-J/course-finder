@@ -4,4 +4,4 @@ export interface CardItem {
     srcURL: string;
     rating: number;
     totalRating: number;
-};
+}
