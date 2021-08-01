@@ -16,7 +16,7 @@ const routes: Routes = [
                         .then(m => m.DashboardModule)
   },
   {
-    path: 'course',
+    path: 'r',
     canActivate: [AuthGuard],
     loadChildren: () => import('src/app/main/course/course.module')
                         .then(m => m.CourseModule)

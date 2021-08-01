@@ -1,4 +1,4 @@
-import { ResponseItem } from '../models/response.model';
+import { Resource, ResponseItem } from '../models/response.model';
 
 export const ResponseListDefault: { [key: string]: ResponseItem } =  {
     videos: {
@@ -13,4 +13,14 @@ export const ResponseListDefault: { [key: string]: ResponseItem } =  {
         isLoading: false,
         data: [],
     },
+};
+
+export const ResourceDefault: Resource = {
+    id: '',
+    title: '',
+    channel: '',
+    description: '',
+    rating: 0,
+    image: '',
+    comments: []
 };

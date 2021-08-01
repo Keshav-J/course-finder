@@ -19,3 +19,18 @@ export interface ResponseItem {
     isLoading: boolean;
     data: CardItem[];
 }
+
+export interface Resource {
+    id: string;
+    title: string;
+    channel: string;
+    description: string;
+    rating: number;
+    image: string;
+    comments: Comment[];
+}
+
+export interface Comment {
+    name: string;
+    comment: string;
+}
