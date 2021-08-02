@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ResponseListDefault } from 'src/app/core/constants/defaults';
+import { ResourceTypes, ResponseListDefault } from 'src/app/core/constants/defaults';
 import { HelperService } from 'src/app/core/helpers/helper.service';
 import { CardItem } from 'src/app/core/models/models';
 import { CourseResult, ResponseItem } from 'src/app/core/models/response.model';
@@ -48,9 +48,9 @@ export class DashboardComponent implements OnInit {
 
   search(): void {
     const searchQuery = this.searchForm.get('searchQuery')?.value;
-    this.responseList.videos = { isLoading: true, data: [] };
-    this.responseList.courses = { isLoading: true, data: [] };
-    this.responseList.blogs = { isLoading: true, data: [] };
+    this.responseList.videos = { isLoading: true, type: ResourceTypes.videos, data: [] };
+    this.responseList.courses = { isLoading: true, type: ResourceTypes.courses, data: [] };
+    this.responseList.blogs = { isLoading: true, type: ResourceTypes.blogs, data: [] };
     this.dashboardService.searchYoutube(searchQuery).subscribe(
       (data: { [key: string]: CardItem[] }) => {
         this.responseList.videos.data = this.helperService.parseVideoToCardItem(data.data);

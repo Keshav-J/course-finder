@@ -4,12 +4,8 @@ import { CourseComponent } from './course.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: CourseComponent
-  },
-  {
-    path: '**',
-    redirectTo: ''
   }
 ];
 

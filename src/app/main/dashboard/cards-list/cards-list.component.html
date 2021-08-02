@@ -1,6 +1,6 @@
 <div class="container" *ngIf="!!resourceList && resourceList.length > 0">
     <ng-container *ngFor="let resource of resourceList">
-        <app-card [resource]="resource"></app-card>
+        <app-card [resource]="resource" [type]="resourceType"></app-card>
     </ng-container>
 </div>
 <div class="container loader-container" *ngIf="isLoading">
