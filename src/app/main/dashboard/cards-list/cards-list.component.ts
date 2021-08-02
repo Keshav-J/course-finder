@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ResourceTypes } from 'src/app/core/constants/defaults';
 import { CardItem } from 'src/app/core/models/models';
 
 @Component({
@@ -13,6 +14,9 @@ export class CardsListComponent implements OnInit {
 
   @Input()
   isLoading: boolean;
+
+  @Input()
+  resourceType!: ResourceTypes;
 
   constructor() {
     this.resourceList = [];

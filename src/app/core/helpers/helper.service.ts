@@ -23,6 +23,7 @@ export class HelperService {
         }
 
         cardList.push({
+          id: video.id,
           title: video.title,
           srcName: video.channel,
           srcURL: `https://www.youtube.com/watch?v=${video.id}`,

@@ -1,17 +1,38 @@
-<a href="{{resource.srcURL}}" target="_blank">
-    <div class="container">
-        <div class="right-align">
+<ng-container *ngIf="type === resourceTypes.videos">
+    <div [routerLink]="['/r/', resource.id]" routerLinkActive="router-link-active">
+        <div class="container">
+            <div class="right-align">
+                <div>
+                <h3> {{resource.rating | number : '1.1-1'}}/{{resource.totalRating}}</h3>
+                </div>
+                
+            </div>
             <div>
-            <h3> {{resource.rating | number : '1.1-1'}}/{{resource.totalRating}}</h3>
+                <h2 class="title"> {{resource.title}}</h2>
+            </div>
+            <div>
+                {{resource.srcName}}
             </div>
             
         </div>
-        <div>
-            <h2 class="title"> {{resource.title}}</h2>
-        </div>
-        <div>
-            {{resource.srcName}}
-        </div>
-        
     </div>
-</a>
+</ng-container>
+<ng-container *ngIf="type !== resourceTypes.videos">
+    <a href="{{resource.srcURL}}" target="_blank">
+        <div class="container">
+            <div class="right-align">
+                <div>
+                <h3> {{resource.rating | number : '1.1-1'}}/{{resource.totalRating}}</h3>
+                </div>
+                
+            </div>
+            <div>
+                <h2 class="title"> {{resource.title}}</h2>
+            </div>
+            <div>
+                {{resource.srcName}}
+            </div>
+            
+        </div>
+    </a>
+</ng-container>

@@ -1,3 +1,4 @@
+import { ResourceTypes } from '../constants/defaults';
 import { CardItem } from './models';
 
 export interface CourseResult {
@@ -17,6 +18,7 @@ export interface CourseItem {
 
 export interface ResponseItem {
     isLoading: boolean;
+    type: ResourceTypes;
     data: CardItem[];
 }
 
