@@ -43,8 +43,7 @@
             }
 
             .content {
-                max-width: 75vw;
-                min-width: 350px;
+                width: calc(100% - 320px);
                 .desc {
                     margin-top: 40px;
                 }

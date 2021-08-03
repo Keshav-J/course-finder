@@ -30,6 +30,6 @@ export const ResourceDefault: Resource = {
     channel: '',
     description: '',
     rating: 0,
-    image: '',
+    url: '',
     comments: []
 };
