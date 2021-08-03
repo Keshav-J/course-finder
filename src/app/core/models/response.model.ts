@@ -28,7 +28,7 @@ export interface Resource {
     channel: string;
     description: string;
     rating: number;
-    image: string;
+    url: string;
     comments: Comment[];
 }
 

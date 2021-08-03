@@ -12,23 +12,23 @@
                 <div class="image" #bannerDiv></div>
                 <div class="rating">
                     <span>Rating</span>
-                    <span>{{course.rating | number : '1.1-1'}}/5</span>
+                    <span>{{course?.rating | number : '1.1-1'}}/5</span>
                 </div>
             </div>
             <div class="content">
                 <h1 class="title">
-                    {{course.title}}
+                    {{course?.title}}
                 </h1>
-                <h2>{{course.channel}}</h2>
+                <h2>{{course?.channel}}</h2>
                 <div class="desc">
                     <h2>Description:</h2>
-                    <p>{{course.description}}</p>
+                    <p>{{course?.description}}</p>
                 </div>
             </div>
         </div>
         <div class="reviews">
             <h2>Reviews:</h2>
-            <ng-container *ngFor="let review of course.comments">
+            <ng-container *ngFor="let review of course?.comments">
                 <div class="review">
                     <div class="reviewer">
                         <h4>{{review.name}}</h4>
